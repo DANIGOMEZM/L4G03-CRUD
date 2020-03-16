@@ -1,43 +1,18 @@
 <?php
-//Datos de conexion
-$host="localhost";//ip, maquina
-$user="root";
-$password="12345678";
-$base="personas";
-
-
-class DB{
-
-public static function init (){
-
-
-
-echo "iniciando base datos";
-
-
-
-public static function query(){
-
-    // crear la conexion
-    $ 
+class DB {
+    static $host = "localhost";
+    static $user = "root";
+    static $password = "";
+    static $db = "personas";   
+    public static function init(){
+        echo "Iniciando base de datos";
     }
-
-
-
+    public static function query($sql){
+        //Crear la conexión
+        $con = new mysqli(self::$host, self::$user, self::$password, self::$db);
+        $result = $con->query($sql);
+        $con->close();
+        return $result;
+    }
 }
-
-
-
-
-
-
-
-}
-
-
-
-
-
-
-
-}
+?>

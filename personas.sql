@@ -1,6 +1,6 @@
 -- --------------------------------------------------------
 -- Host:                         localhost
--- Versión del servidor:         8.0.17 - MySQL Community Server - GPL
+-- Versión del servidor:         5.7.24 - MySQL Community Server (GPL)
 -- SO del servidor:              Win64
 -- HeidiSQL Versión:             10.2.0.5599
 -- --------------------------------------------------------
@@ -13,27 +13,23 @@
 
 
 -- Volcando estructura de base de datos para personas
-CREATE DATABASE IF NOT EXISTS `personas` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+CREATE DATABASE IF NOT EXISTS `personas` /*!40100 DEFAULT CHARACTER SET utf8 */;
 USE `personas`;
 
--- Volcando estructura para tabla personas.personas
-CREATE TABLE IF NOT EXISTS `personas` (
+-- Volcando estructura para tabla personas.persona
+CREATE TABLE IF NOT EXISTS `persona` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nombre` varchar(50) DEFAULT NULL,
   `email` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla personas.personas: ~0 rows (aproximadamente)
-/*!40000 ALTER TABLE `personas` DISABLE KEYS */;
-INSERT INTO `personas` (`id`, `nombre`, `email`) VALUES
-	(1, 'perro', 'ss@caca'),
-	(2, 'pee', 'arleygomez2009@hotmail.com'),
-	(3, 'jose', 'jodse-@hotmail.com'),
-	(4, 'wilson', 'wilsongomez-@hotmail.com'),
-	(5, 'fabio', 'fabio209@hotmail.com'),
-	(6, 'pedro', 'perdo09@hotmail.com');
-/*!40000 ALTER TABLE `personas` ENABLE KEYS */;
+-- Volcando datos para la tabla personas.persona: ~0 rows (aproximadamente)
+/*!40000 ALTER TABLE `persona` DISABLE KEYS */;
+INSERT INTO `persona` (`id`, `nombre`, `email`) VALUES
+	(1, 'perra', 'arleygomez2009@hotmail.com'),
+	(2, 'wilson', 'wisongomez31@hotmail.com');
+/*!40000 ALTER TABLE `persona` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;

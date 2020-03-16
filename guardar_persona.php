@@ -1,23 +1,16 @@
-<?php
+<?php 
+    include('includes/db.php');
+    
+    $nombre = $_POST["nombre"];
+    $email = $_POST["email"];
 
-//Datos de conexion
-$host="localhost";//ip, maquina
-$user="root";
-$password="12345678";
-$base="personas";
-$con= new mysqli($host,$user,$password,$base);
+    $sql = "insert into persona(nombre,email) values('$nombre', '$email')";
+    
+    if(DB::query($sql)){ //if($con->query($query) == true)
+        echo "Persona guardada correctamente";
+    }else{
+        echo "No se ha podido guardar la persona. " . $con->error;
+    } 
 
-if($con->connect_error){
-    // ->, accede a connect-error
-    echo "| Error de conexion |";
-}else{
-    echo "| Conectado a la BSD |<br>";
-}
-$nombre=$_POST["nombre"];
-$email=$_POST["email"];
-echo "Informacion enviada:<br>Nombre:$nombre <br>Email:$email ";
-$query="insert into personas(nombre,email) values('$nombre','$email')";
-$con->query($query);
-$con->close();
-header('location: crear.php');
+    header('Location: index.php');
 ?>
